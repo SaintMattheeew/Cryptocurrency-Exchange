@@ -1,0 +1,2 @@
+module InputAddressesHelper
+end
