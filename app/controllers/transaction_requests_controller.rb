@@ -27,12 +27,12 @@ class TransactionRequestsController < ApplicationController
   def create
     @transaction_request = TransactionRequest.new(transaction_request_params)
 
-    if @transaction_request.output_address_cryptocurrency_id == 1
+    if @transaction_request.output_address_cryptocurrency_id == 2
       inputObj = InputAddress.bit_to_lit
-      inputObj.update(status: '0')
+      inputObj.update(status: '1')
     else
       inputObj = InputAddress.lit_to_bit
-      inputObj.update(status: '0')
+      inputObj.update(status: '1')
     end
 
     @transaction_request.input_address_id = inputObj.id
